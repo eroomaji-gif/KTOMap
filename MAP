@@ -180,7 +180,7 @@ local myGameHubList = {
     },
     {
         name = "Bloxfruit",
-        image = "rbxassetid://6023426915",
+        image = "rbxassetid://85716643345720",
         scriptUrl = "https://raw.githubusercontent.com/eroomaji-gif/bloxfruit/refs/heads/main/bloxfruit"
     },
     {
