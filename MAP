@@ -167,23 +167,25 @@ MapGrid.CellSize = UDim2.new(0, 115, 0, 135) -- ขนาดกล่องแ�
 MapGrid.CellPadding = UDim2.new(0, 10, 0, 10)
 MapGrid.SortOrder = Enum.SortOrder.LayoutOrder
 
+
+
 -- ==========================================
 -- 📌 [เพิ่ม/แก้ไข รายชื่อแมพและสคริปต์ของคุณตรงนี้ได้เลย]
 -- ==========================================
 local myGameHubList = {
     {
         name = "แมพที่ 1 (เอาชีวิตรอดจากตัวอย่าง)",
-        image = "rbxassetid://98592554845045", -- ใส่ไอดีรูปปกแมพ
-        scriptUrl = "https://raw.githubusercontent.com/eroomaji-gif/Killer/refs/heads/main/Kill_ler" -- ลิงก์ Raw สคริปต์
+        image = "rbxassetid://6023426915", -- แนะนำใช้ไอดีรูปมาตรฐานที่ผ่านระบบแล้ว
+        scriptUrl = "https://raw.githubusercontent.com/eroomaji-gif/Killer/refs/heads/main/Kill_ler"
     },
     {
         name = "แมพที่ 2 (Bloxfruit)",
-        image = "rbxassetid://120650794149803",
+        image = "rbxassetid://6023426915",
         scriptUrl = "https://raw.githubusercontent.com/eroomaji-gif/bloxfruit/refs/heads/main/bloxfruit"
     },
     {
         name = "แมพที่ 3 (Mem See)",
-        image = "rbxassetid://96934500057758",
+        image = "rbxassetid://6023426915",
         scriptUrl = "https://raw.githubusercontent.com/eroomaji-gif/MemSee/refs/heads/main/MemSee"
     },
     {
@@ -191,7 +193,6 @@ local myGameHubList = {
         image = "rbxassetid://6023426915",
         scriptUrl = "https://raw.githubusercontent.com/username/repo/main/script4.lua"
     },
-    -- สามารถก๊อปปี้เพิ่มต่อลงไปข้างล่างเรื่อยๆ ได้เลย ระบบจะทำการเรียงตารางและเลื่อนลงด้านล่างให้อัตโนมัติ
 }
 
 -- สร้างปุ่มแมพลงในตาราง Grid แบบอัตโนมัติ
@@ -206,13 +207,21 @@ for _, data in ipairs(myGameHubList) do
     CardCorner.CornerRadius = UDim.new(0, 8)
     CardCorner.Parent = MapCard
 
-    -- รูปภาพปกแมพ
+    -- รูปภาพปกแมพ (เพิ่มระบบป้องกันและบังคับโหลดผ่าน ContentProvider)
     local MapIcon = Instance.new("ImageLabel")
     MapIcon.Parent = MapCard
     MapIcon.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
     MapIcon.Position = UDim2.new(0, 5, 0, 5)
     MapIcon.Size = UDim2.new(1, -10, 0, 90)
     MapIcon.Image = data.image
+    MapIcon.BackgroundTransparency = 0
+
+    -- สั่งให้ตัวเกมช่วยพรีโหลดภาพล่วงหน้าบังคับดึงข้อมูล
+    task.spawn(function()
+        pcall(function()
+            game:GetService("ContentProvider"):PreloadAsync({MapIcon})
+        end)
+    end)
 
     local IconCorner = Instance.new("UICorner")
     IconCorner.CornerRadius = UDim.new(0, 6)
@@ -234,19 +243,12 @@ for _, data in ipairs(myGameHubList) do
     MapCard.MouseButton1Click:Connect(function()
         print("🚀 [GameHub] กำลังรันสคริปต์และปิด UI เดิม: " .. data.name)
         
-        -- ทำลาย ScreenGui ทิ้งเพื่อเคลียร์เมนูและระบบเบื้องหลังทั้งหมด
         if ScreenGui then
             ScreenGui:Destroy()
         end
         
-        -- ดึงและรันสคริปต์ของแมพนั้นๆ
         pcall(function()
             loadstring(game:HttpGet(data.scriptUrl))()
         end)
     end)
 end
-
--- กดคลิกที่หมวดหมู่เพื่อเปิดหน้าต่าง
-CatBtnMapHub.MouseButton1Click:Connect(function()
-    MapHubContainer.Visible = true
-end)
