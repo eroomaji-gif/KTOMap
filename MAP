@@ -178,7 +178,7 @@ local myGameHubList = {
     },
     {
         name = "แมพที่ 2 (Bloxfruit)",
-        image = "rbxassetid://98633261924661",
+        image = "rbxassetid://80591615936986",
         scriptUrl = "https://raw.githubusercontent.com/eroomaji-gif/bloxfruit/refs/heads/main/bloxfruit"
     },
     {
