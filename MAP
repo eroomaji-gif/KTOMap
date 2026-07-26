@@ -174,17 +174,17 @@ MapGrid.SortOrder = Enum.SortOrder.LayoutOrder
 -- ==========================================
 local myGameHubList = {
     {
-        name = "แมพที่ 1 (เอาชีวิตรอดจากตัวอย่าง)",
+        name = "The Kill Ler",
         image = "rbxassetid://126787621235381", -- แนะนำใช้ไอดีรูปมาตรฐานที่ผ่านระบบแล้ว
         scriptUrl = "https://raw.githubusercontent.com/eroomaji-gif/Killer/refs/heads/main/Kill_ler"
     },
     {
-        name = "แมพที่ 2 (Bloxfruit)",
+        name = "Bloxfruit",
         image = "rbxassetid://6023426915",
         scriptUrl = "https://raw.githubusercontent.com/eroomaji-gif/bloxfruit/refs/heads/main/bloxfruit"
     },
     {
-        name = "แมพที่ 3 (Mem See)",
+        name = "Mem See",
         image = "rbxassetid://6023426915",
         scriptUrl = "https://raw.githubusercontent.com/eroomaji-gif/MemSee/refs/heads/main/MemSee"
     },
