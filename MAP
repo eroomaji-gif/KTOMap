@@ -82,7 +82,7 @@ TitleBar.Parent = MainFrame
 TitleBar.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
 TitleBar.Size = UDim2.new(1, 0, 0, 40)
 TitleBar.Font = Enum.Font.GothamBold
-TitleBar.Text = "  🤪 KTO CRUB KILL LER "
+TitleBar.Text = "  🇹🇭 KTO CRUB USE MAP "
 TitleBar.TextColor3 = Color3.fromRGB(255, 255, 255)
 TitleBar.TextSize = 15
 TitleBar.TextXAlignment = Enum.TextXAlignment.Left
@@ -173,7 +173,7 @@ MapGrid.SortOrder = Enum.SortOrder.LayoutOrder
 local myGameHubList = {
     {
         name = "แมพที่ 1 (ตัวอย่าง)",
-        image = "rbxassetid://6023426915", -- ใส่ไอดีรูปปกแมพ
+        image = "rbxassetid://4580204640", -- ใส่ไอดีรูปปกแมพ
         scriptUrl = "https://raw.githubusercontent.com/username/repo/main/script1.lua" -- ลิงก์ Raw สคริปต์
     },
     {
