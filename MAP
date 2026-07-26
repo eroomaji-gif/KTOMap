@@ -174,7 +174,7 @@ local myGameHubList = {
     {
         name = "แมพที่ 1 (ตัวอย่าง)",
         image = "rbxassetid://4580204640", -- ใส่ไอดีรูปปกแมพ
-        scriptUrl = "https://raw.githubusercontent.com/username/repo/main/script1.lua" -- ลิงก์ Raw สคริปต์
+        scriptUrl = "https://raw.githubusercontent.com/eroomaji-gif/Killer/refs/heads/main/Kil%20ler.lua" -- ลิงก์ Raw สคริปต์
     },
     {
         name = "แมพที่ 2 (ตัวอย่าง)",
