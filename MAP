@@ -173,7 +173,7 @@ MapGrid.SortOrder = Enum.SortOrder.LayoutOrder
 local myGameHubList = {
     {
         name = "แมพที่ 1 (เอาชีวิตรอดจากตัวอย่าง)",
-        image = "rbxassetid://126787621235381", -- ใส่ไอดีรูปปกแมพ
+        image = "rbxassetid://107993920978090", -- ใส่ไอดีรูปปกแมพ
         scriptUrl = "https://raw.githubusercontent.com/eroomaji-gif/Killer/refs/heads/main/Kill_ler" -- ลิงก์ Raw สคริปต์
     },
     {
