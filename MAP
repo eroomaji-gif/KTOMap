@@ -182,7 +182,7 @@ local myGameHubList = {
         scriptUrl = "https://raw.githubusercontent.com/eroomaji-gif/bloxfruit/refs/heads/main/bloxfruit"
     },
     {
-        name = "แมพที่ 3 (ตัวอย่าง)",
+        name = "แมพที่ 3 (Mem See)",
         image = "rbxassetid://6023426915",
         scriptUrl = "https://raw.githubusercontent.com/eroomaji-gif/MemSee/refs/heads/main/MemSee"
     },
