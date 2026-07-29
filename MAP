@@ -191,7 +191,7 @@ local myGameHubList = {
     {
         name = "รางตาย🛠️",
         image = "rbxassetid://109479437687868",
-        scriptUrl = "https://raw.githubusercontent.com/eroomaji-gif/arenazombie/refs/heads/main/arenaZombie"
+        scriptUrl = "e/https://raw.githubusercontent.com/eroomaji-gif/arenazombie/refs/heads/main/%E0%B8%A3%E0%B8%B2%E0%B8%87%E0%B8%95%E0%B8%B2%E0%B8%A2"
     },
 }
 
