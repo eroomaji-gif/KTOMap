@@ -189,9 +189,9 @@ local myGameHubList = {
         scriptUrl = "https://raw.githubusercontent.com/eroomaji-gif/MemSee/refs/heads/main/MemSee"
     },
     {
-        name = "แมพที่ 4 (ตัวอย่าง)",
+        name = "Sviwols Arena Zombie",
         image = "rbxassetid://6023426915",
-        scriptUrl = "https://raw.githubusercontent.com/username/repo/main/script4.lua"
+        scriptUrl = "https://raw.githubusercontent.com/eroomaji-gif/arenazombie/refs/heads/main/arenaZombie"
     },
 }
 
