@@ -189,8 +189,8 @@ local myGameHubList = {
         scriptUrl = "https://raw.githubusercontent.com/eroomaji-gif/MemSee/refs/heads/main/MemSee"
     },
     {
-        name = "Sviwols Arena Zombie",
-        image = "rbxassetid://6023426915",
+        name = "Sviwols Arena Zombie🛠️",
+        image = "rbxassetid://131173785175549",
         scriptUrl = "https://raw.githubusercontent.com/eroomaji-gif/arenazombie/refs/heads/main/arenaZombie"
     },
 }
