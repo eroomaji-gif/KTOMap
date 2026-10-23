@@ -320,7 +320,7 @@ local myBlockFoodList = {
     {
         name = "Block Food สคริปต์ 1",
         image = "rbxassetid://110425567481708",
-        scriptUrl = "https://raw.githubusercontent.com/huy384/redzHub/refs/heads/main/redzHub.lua"))()"
+        scriptUrl = "https://raw.githubusercontent.com/huy384/redzHub/refs/heads/main/redzHub"))()"
     },
     {
         name = "ตัวอย่าง",
