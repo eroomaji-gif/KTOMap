@@ -334,3 +334,129 @@ UserInputService.InputBegan:Connect(function(input, gameProcessedEvent)
 	end
 end)
 
+
+
+
+
+
+
+
+
+-- ==========================================
+-- 📌 พื้นที่แสดงผลฝั่งขวา หมวดหมู่ที่ 2 (BloxFruitsContainer)
+-- ==========================================
+pcall(function()
+local BloxFruitsContainer = Instance.new("ScrollingFrame")
+BloxFruitsContainer.Name = "BloxFruitsContainer"
+BloxFruitsContainer.Parent = MainFrame
+BloxFruitsContainer.BackgroundTransparency = 1
+BloxFruitsContainer.Position = UDim2.new(0, 160, 0, 50)
+BloxFruitsContainer.Size = UDim2.new(1, -170, 1, -60)
+BloxFruitsContainer.CanvasSize = UDim2.new(0, 0, 0, 0)
+BloxFruitsContainer.AutomaticCanvasSize = Enum.AutomaticSize.Y
+BloxFruitsContainer.ScrollBarThickness = 6
+BloxFruitsContainer.Visible = false -- ปิดไว้ก่อน
+
+local BloxFruitsGrid = Instance.new("UIGridLayout")
+BloxFruitsGrid.Parent = BloxFruitsContainer
+BloxFruitsGrid.CellSize = UDim2.new(0, 115, 0, 135)
+BloxFruitsGrid.CellPadding = UDim2.new(0, 10, 0, 10)
+BloxFruitsGrid.SortOrder = Enum.SortOrder.LayoutOrder
+
+-- รายชื่อแมพสำหรับหมวดหมู่ที่ 2 (Blox Fruits)
+local myBloxFruitsList = {
+    {
+        name = "Blox Fruit สคริปต์ 1",
+        image = "rbxassetid://",
+        scriptUrl = ""
+    },
+    {
+        name = "Blox Fruit สคริปต์ 2",
+        image = "rbxassetid://",
+        scriptUrl = ""
+    },
+    {
+        name = "ตัวอย่าง",
+        image = "rbxassetid://",
+        scriptUrl = ""
+    },
+}
+
+-- สร้างปุ่มสำหรับหมวดหมู่ที่ 2
+for _, data in ipairs(myBloxFruitsList) do
+    local MapCard = Instance.new("TextButton")
+    MapCard.Parent = BloxFruitsContainer
+    MapCard.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+    MapCard.AutoButtonColor = true
+    MapCard.Text = ""
+
+    local CardCorner = Instance.new("UICorner")
+    CardCorner.CornerRadius = UDim.new(0, 8)
+    CardCorner.Parent = MapCard
+
+    local MapIcon = Instance.new("ImageLabel")
+    MapIcon.Parent = MapCard
+    MapIcon.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+    MapIcon.Position = UDim2.new(0, 5, 0, 5)
+    MapIcon.Size = UDim2.new(1, -10, 0, 90)
+    MapIcon.Image = data.image
+    MapIcon.BackgroundTransparency = 0
+
+    task.spawn(function()
+        pcall(function()
+            game:GetService("ContentProvider"):PreloadAsync({MapIcon})
+        end)
+    end)
+
+    local IconCorner = Instance.new("UICorner")
+    IconCorner.CornerRadius = UDim.new(0, 6)
+    IconCorner.Parent = MapIcon
+
+    local MapName = Instance.new("TextLabel")
+    MapName.Parent = MapCard
+    MapName.BackgroundTransparency = 1
+    MapName.Position = UDim2.new(0, 0, 0, 97)
+    MapName.Size = UDim2.new(1, 0, 0, 32)
+    MapName.Font = Enum.Font.GothamBold
+    MapName.Text = data.name
+    MapName.TextColor3 = Color3.fromRGB(255, 255, 255)
+    MapName.TextSize = 12
+    MapName.TextWrapped = true
+
+    MapCard.MouseButton1Click:Connect(function()
+        print("🚀 [BloxFruits] กำลังรันสคริปต์และปิด UI เดิม: " .. data.name)
+        if ScreenGui then
+            ScreenGui:Destroy()
+        end
+        pcall(function()
+            loadstring(game:HttpGet(data.scriptUrl))()
+        end)
+    end)
+end
+
+
+-- ==========================================
+-- 🔄 ระบบสลับหน้าหมวดหมู่ (Tab Switching)
+-- ==========================================
+CatBtnMapHub.MouseButton1Click:Connect(function()
+    MapHubContainer.Visible = true
+    BloxFruitsContainer.Visible = false
+    
+    CatBtnMapHub.BackgroundColor3 = Color3.fromRGB(50, 50, 60)
+    CatBtnMapHub.TextColor3 = Color3.fromRGB(255, 255, 255)
+    
+    CatBtnBloxFruits.BackgroundColor3 = Color3.fromRGB(40, 40, 50)
+    CatBtnBloxFruits.TextColor3 = Color3.fromRGB(200, 200, 200)
+end)
+
+CatBtnBloxFruits.MouseButton1Click:Connect(function()
+    MapHubContainer.Visible = false
+    BloxFruitsContainer.Visible = true
+    
+    CatBtnBloxFruits.BackgroundColor3 = Color3.fromRGB(50, 50, 60)
+    CatBtnBloxFruits.TextColor3 = Color3.fromRGB(255, 255, 255)
+    
+    CatBtnMapHub.BackgroundColor3 = Color3.fromRGB(40, 40, 50)
+    CatBtnMapHub.TextColor3 = Color3.fromRGB(200, 200, 200)
+end)
+end)
