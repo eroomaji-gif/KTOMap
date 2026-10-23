@@ -313,13 +313,23 @@ BlockFoodGrid.CellPadding = UDim2.new(0, 10, 0, 10)
 BlockFoodGrid.SortOrder = Enum.SortOrder.LayoutOrder
 
 
+
+
+
+
+
+
+
+
+
 -- ==========================================
--- 📂 รายชื่อสคริปต์ในหมวด Block Food (ใช้รัน loadstring โดยตรง)
+-- 📂 3. รายชื่อสคริปต์ในหมวด Block Food
 -- ==========================================
 local myBlockFoodList = {
     {
         name = "RED Z",
         image = "rbxassetid://110425567481708",
+        -- ใส่ลิงก์รันตรงนี้ได้เลย
         runScript = function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/huy384/redzHub/refs/heads/main/redzHub.lua"))()
         end
@@ -328,14 +338,12 @@ local myBlockFoodList = {
         name = "ตัวอย่าง",
         image = "rbxassetid://",
         runScript = function()
-            -- ใส่ loadstring ของอันถัดไปตรงนี้ได้เลย
+            -- ใส่ลิงก์อื่นเพิ่มตรงนี้ในอนาคต
         end
     },
 }
 
--- ==========================================
--- ⚙️ ส่วนสร้างปุ่มและระบบกดรัน
--- ==========================================
+-- วนลูปสร้างการ์ดแมพในหมวด Block Food
 for _, data in ipairs(myBlockFoodList) do
     local MapCard = Instance.new("TextButton")
     MapCard.Parent = BlockFoodContainer
@@ -376,15 +384,38 @@ for _, data in ipairs(myBlockFoodList) do
     MapName.TextSize = 12
     MapName.TextWrapped = true
 
-    -- เมื่อคลิก จะสั่งรันฟังก์ชัน loadstring ที่เขียนไว้ข้างในทันที
+    -- กดแล้วสั่งรันฟังก์ชัน loadstring โดยตรง
     MapCard.MouseButton1Click:Connect(function()
         print("🚀 [BlockFood] กำลังรันสคริปต์: " .. data.name)
-        if ScreenGui then 
-            ScreenGui:Destroy() 
-        end
-        
+        if ScreenGui then ScreenGui:Destroy() end
         if data.runScript then
             pcall(data.runScript)
         end
     end)
 end
+
+
+-- ==========================================
+-- 🔄 4. ระบบกดสลับหน้า (เพิ่มเข้าไปกับปุ่มเดิมของคุณ)
+-- ==========================================
+
+-- เมื่อกดปุ่มหมวดหมู่แรก (ชื่อ CatBtnMapHub ของเดิม) ให้ซ่อน Block Food
+CatBtnMapHub.MouseButton1Click:Connect(function()
+    MapHubContainer.Visible = true
+    BlockFoodContainer.Visible = false
+    CatBtnMapHub.BackgroundColor3 = Color3.fromRGB(50, 50, 60)
+    CatBtnMapHub.TextColor3 = Color3.fromRGB(255, 255, 255)
+    CatBtnBlockFood.BackgroundColor3 = Color3.fromRGB(40, 40, 50)
+    CatBtnBlockFood.TextColor3 = Color3.fromRGB(200, 200, 200)
+end)
+
+-- เมื่อกดปุ่ม Block Food ใหม่ ให้ซ่อนหมวดแรกแล้วแสดง Block Food
+CatBtnBlockFood.MouseButton1Click:Connect(function()
+    MapHubContainer.Visible = false
+    BlockFoodContainer.Visible = true
+    CatBtnBlockFood.BackgroundColor3 = Color3.fromRGB(50, 50, 60)
+    CatBtnBlockFood.TextColor3 = Color3.fromRGB(255, 255, 255)
+    CatBtnMapHub.BackgroundColor3 = Color3.fromRGB(40, 40, 50)
+    CatBtnMapHub.TextColor3 = Color3.fromRGB(200, 200, 200)
+end)
+
