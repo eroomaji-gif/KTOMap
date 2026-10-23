@@ -139,7 +139,7 @@ CatBtnMapHub.Parent = SidebarFrame
 CatBtnMapHub.BackgroundColor3 = Color3.fromRGB(50, 50, 60)
 CatBtnMapHub.Size = UDim2.new(1, 0, 0, 40)
 CatBtnMapHub.Font = Enum.Font.GothamBold
-CatBtnMapHub.Text = "🎮 เลือกรันแมพ"
+CatBtnMapHub.Text = "👤 DEV SCRIPT"
 CatBtnMapHub.TextColor3 = Color3.fromRGB(255, 255, 255)
 CatBtnMapHub.TextSize = 13
 
