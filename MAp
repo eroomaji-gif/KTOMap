@@ -341,21 +341,37 @@ end)
 
 
 
+    -- ==========================================
+-- 1️⃣ [ฝั่งซ้าย] สร้างปุ่มหมวดหมู่ Blox Fruits (Sidebar Button)
+-- ==========================================
+local CatBtnBloxFruits = Instance.new("TextButton")
+CatBtnBloxFruits.Name = "CategoryBloxFruits"
+CatBtnBloxFruits.Parent = SidebarFrame -- แปะเข้ากับ SidebarFrame ของคุณ
+CatBtnBloxFruits.BackgroundColor3 = Color3.fromRGB(40, 40, 50)
+CatBtnBloxFruits.Size = UDim2.new(1, 0, 0, 40)
+CatBtnBloxFruits.Font = Enum.Font.GothamBold
+CatBtnBloxFruits.Text = "🍎 Blox Fruits"
+CatBtnBloxFruits.TextColor3 = Color3.fromRGB(200, 200, 200)
+CatBtnBloxFruits.TextSize = 13
+
+local CatCornerBloxFruits = Instance.new("UICorner")
+CatCornerBloxFruits.CornerRadius = UDim.new(0, 6)
+CatCornerBloxFruits.Parent = CatBtnBloxFruits
+
 
 -- ==========================================
--- 📌 พื้นที่แสดงผลฝั่งขวา หมวดหมู่ที่ 2 (BloxFruitsContainer)
+-- 2️⃣ [ฝั่งขวา] คอนเทนเนอร์แสดงผลแมพ Blox Fruits (Container & Grid)
 -- ==========================================
-pcall(function()
 local BloxFruitsContainer = Instance.new("ScrollingFrame")
 BloxFruitsContainer.Name = "BloxFruitsContainer"
-BloxFruitsContainer.Parent = MainFrame
+BloxFruitsContainer.Parent = MainFrame -- แปะเข้ากับ MainFrame ของคุณ
 BloxFruitsContainer.BackgroundTransparency = 1
 BloxFruitsContainer.Position = UDim2.new(0, 160, 0, 50)
 BloxFruitsContainer.Size = UDim2.new(1, -170, 1, -60)
 BloxFruitsContainer.CanvasSize = UDim2.new(0, 0, 0, 0)
 BloxFruitsContainer.AutomaticCanvasSize = Enum.AutomaticSize.Y
 BloxFruitsContainer.ScrollBarThickness = 6
-BloxFruitsContainer.Visible = false -- ปิดไว้ก่อน
+BloxFruitsContainer.Visible = false -- ซ่อนไว้ก่อน ให้เปิดเมื่อกดปุ่มหมวดหมู่
 
 local BloxFruitsGrid = Instance.new("UIGridLayout")
 BloxFruitsGrid.Parent = BloxFruitsContainer
@@ -363,12 +379,15 @@ BloxFruitsGrid.CellSize = UDim2.new(0, 115, 0, 135)
 BloxFruitsGrid.CellPadding = UDim2.new(0, 10, 0, 10)
 BloxFruitsGrid.SortOrder = Enum.SortOrder.LayoutOrder
 
--- รายชื่อแมพสำหรับหมวดหมู่ที่ 2 (Blox Fruits)
+
+-- ==========================================
+-- 3️⃣ [รายการข้อมูล] รายชื่อแมพและสคริปต์ Blox Fruits
+-- ==========================================
 local myBloxFruitsList = {
     {
         name = "Blox Fruit สคริปต์ 1",
-        image = "rbxassetid://",
-        scriptUrl = ""
+        image = "rbxassetid://108021829332546",
+        scriptUrl = "https://raw.githubusercontent.com/.../main/script"
     },
     {
         name = "Blox Fruit สคริปต์ 2",
@@ -382,7 +401,10 @@ local myBloxFruitsList = {
     },
 }
 
--- สร้างปุ่มสำหรับหมวดหมู่ที่ 2
+
+-- ==========================================
+-- 4️⃣ [ระบบสร้างการ์ด] วนลูปสร้างปุ่มแมพลงใน Grid ฝั่งขวา
+-- ==========================================
 for _, data in ipairs(myBloxFruitsList) do
     local MapCard = Instance.new("TextButton")
     MapCard.Parent = BloxFruitsContainer
@@ -394,6 +416,7 @@ for _, data in ipairs(myBloxFruitsList) do
     CardCorner.CornerRadius = UDim.new(0, 8)
     CardCorner.Parent = MapCard
 
+    -- รูปภาพปกแมพ
     local MapIcon = Instance.new("ImageLabel")
     MapIcon.Parent = MapCard
     MapIcon.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
@@ -412,6 +435,7 @@ for _, data in ipairs(myBloxFruitsList) do
     IconCorner.CornerRadius = UDim.new(0, 6)
     IconCorner.Parent = MapIcon
 
+    -- ชื่อแมพด้านล่างรูป
     local MapName = Instance.new("TextLabel")
     MapName.Parent = MapCard
     MapName.BackgroundTransparency = 1
@@ -423,6 +447,7 @@ for _, data in ipairs(myBloxFruitsList) do
     MapName.TextSize = 12
     MapName.TextWrapped = true
 
+    -- เมื่อคลิกเลือก: ลบ ScreenGui ทิ้งแล้วรันสคริปต์
     MapCard.MouseButton1Click:Connect(function()
         print("🚀 [BloxFruits] กำลังรันสคริปต์และปิด UI เดิม: " .. data.name)
         if ScreenGui then
@@ -433,30 +458,3 @@ for _, data in ipairs(myBloxFruitsList) do
         end)
     end)
 end
-
-
--- ==========================================
--- 🔄 ระบบสลับหน้าหมวดหมู่ (Tab Switching)
--- ==========================================
-CatBtnMapHub.MouseButton1Click:Connect(function()
-    MapHubContainer.Visible = true
-    BloxFruitsContainer.Visible = false
-    
-    CatBtnMapHub.BackgroundColor3 = Color3.fromRGB(50, 50, 60)
-    CatBtnMapHub.TextColor3 = Color3.fromRGB(255, 255, 255)
-    
-    CatBtnBloxFruits.BackgroundColor3 = Color3.fromRGB(40, 40, 50)
-    CatBtnBloxFruits.TextColor3 = Color3.fromRGB(200, 200, 200)
-end)
-
-CatBtnBloxFruits.MouseButton1Click:Connect(function()
-    MapHubContainer.Visible = false
-    BloxFruitsContainer.Visible = true
-    
-    CatBtnBloxFruits.BackgroundColor3 = Color3.fromRGB(50, 50, 60)
-    CatBtnBloxFruits.TextColor3 = Color3.fromRGB(255, 255, 255)
-    
-    CatBtnMapHub.BackgroundColor3 = Color3.fromRGB(40, 40, 50)
-    CatBtnMapHub.TextColor3 = Color3.fromRGB(200, 200, 200)
-end)
-end)
