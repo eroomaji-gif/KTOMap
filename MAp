@@ -179,25 +179,25 @@ local myGameHubList = {
         scriptUrl = "https://raw.githubusercontent.com/eroomaji-gif/Killer/refs/heads/main/Kill_ler"
     },
     {
-        name = "Bloxfruit❌",
-        image = "rbxassetid://103350906665199",
-        scriptUrl = "https://raw.githubusercontent.com/eroomaji-gif/bloxfruit/refs/heads/main/bloxfruit"
+        name = "ตัวอย่าง",
+        image = "rbxassetid://",
+        scriptUrl = ""
     },
     {
-        name = "Mem See❌",
-        image = "rbxassetid://83157689355197",
-        scriptUrl = "https://raw.githubusercontent.com/eroomaji-gif/MemSee/refs/heads/main/MemSee"
+        name = "ตัวอย่าง",
+        image = "rbxassetid://",
+        scriptUrl = ""
     },
     {
-        name = "รางตาย🛠️",
-        image = "rbxassetid://109479437687868",
-        scriptUrl = "https://raw.githubusercontent.com/eroomaji-gif/arenazombie/refs/heads/main/rangtay"
+        name = "ตัวอย่าง",
+        image = "rbxassetid://",
+        scriptUrl = ""
      },
      {
 
-name = "ขโมยไข่ 🛠️",
-        image = "rbxassetid://86699894200524",
-        scriptUrl = "https://raw.githubusercontent.com/eroomaji-gif/Egg/refs/heads/main/Egg"
+name = "ตัวอย่าง",
+        image = "rbxassetid://",
+        scriptUrl = ""
     
      
 
