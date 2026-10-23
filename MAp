@@ -332,7 +332,7 @@ local myBlockFoodList = {
         image = "rbxassetid://110425567481708",
         -- ใส่ลิงก์รันตรงนี้ได้เลย
         runScript = function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/huy384/redzHub/refs/heads/main/redzHub.lua"))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/bloxfruitsnokey/Redz/refs/heads/main/Redz/update.luau"))()
         end
     },
     {
