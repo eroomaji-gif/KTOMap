@@ -283,7 +283,7 @@ CatBtnBlockFood.Parent = SidebarFrame -- (ใช้ SidebarFrame ที่มี
 CatBtnBlockFood.BackgroundColor3 = Color3.fromRGB(40, 40, 50)
 CatBtnBlockFood.Size = UDim2.new(1, 0, 0, 40)
 CatBtnBlockFood.Font = Enum.Font.GothamBold
-CatBtnBlockFood.Text = "🍎 Block Food"
+CatBtnBlockFood.Text = "🧾 รวมสคริป ฟรี"
 CatBtnBlockFood.TextColor3 = Color3.fromRGB(200, 200, 200)
 CatBtnBlockFood.TextSize = 13
 
