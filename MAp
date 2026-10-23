@@ -325,6 +325,7 @@ BlockFoodGrid.SortOrder = Enum.SortOrder.LayoutOrder
 -- ==========================================
 -- 📂 3. รายชื่อสคริปต์ในหมวด Block Food
 -- ==========================================
+pcall(function()
 local myBlockFoodList = {
     {
         name = "RED Z",
@@ -419,3 +420,4 @@ CatBtnBlockFood.MouseButton1Click:Connect(function()
     CatBtnMapHub.TextColor3 = Color3.fromRGB(200, 200, 200)
 end)
 
+end)
