@@ -45,7 +45,7 @@ ToggleButton.Position = UDim2.new(0.05, 0, 0.1, 0)
 ToggleButton.Size = UDim2.new(0, 45, 0, 45)
 ToggleButton.Active = true
 ToggleButton.Draggable = true
-ToggleButton.Image = "rbxassetid://75925823414835"
+ToggleButton.Image = "rbxassetid://129526073700722"
 
 task.spawn(function()
     pcall(function()
