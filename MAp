@@ -68,7 +68,7 @@ MainFrame.Size = UDim2.new(0, 550, 0, 450)
 MainFrame.Visible = false
 MainFrame.Active = true
 MainFrame.Draggable = true
-MainFrame.Image = "rbxassetid://75925823414835"
+MainFrame.Image = "rbxassetid://129526073700722"
 MainFrame.ImageTransparency = 0.45
 
 local MainCorner = Instance.new("UICorner")
